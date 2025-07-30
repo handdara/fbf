@@ -1,0 +1,3 @@
+&MAINFILE name="b.f90" /
+
+&SRCFILES dependencies="b.f90", "a.f90" /
