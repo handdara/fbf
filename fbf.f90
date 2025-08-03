@@ -1,7 +1,7 @@
 module depend
 end module depend
 
-program fortress
+program fbf
     use, intrinsic :: iso_fortran_env, only: stderr => error_unit
     implicit none
 
@@ -39,4 +39,4 @@ contains
         return
     end subroutine readftf
 
-end program fortress
+end program fbf

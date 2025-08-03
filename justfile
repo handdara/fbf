@@ -11,9 +11,9 @@ tags:
     ctags -R
 
 @run:
-    ./bin/build_fortress
+    ./bin/build_fbf
     #cat fortefile.nml
 
 _dev-build: tags
     @alejandra . > /dev/null 2>&1
-    gfortran -std=f2018 fortress.f90 -o bin/build_fortress
+    gfortran -std=f2018 fbf.f90 -o bin/build_fbf
