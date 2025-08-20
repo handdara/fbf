@@ -1,0 +1,9 @@
+{
+    "nthreads": 2,
+    "hover_signature": true,
+    "hover_language": "fortran90",
+    "source_dirs": ["./**"],
+    "use_signature_help": true,
+    "enable_code-actions": true,
+    "lowercase_intrinsics": true
+}

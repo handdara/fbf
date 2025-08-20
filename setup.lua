@@ -20,7 +20,9 @@ local function use(snip)
     table.insert(S, snip)
 end
 
-use(s({ trig = 'example', snippetType = 'autosnippet', wordTrig = false },
-    c(1, { t "this will auto complete", t 'example' })))
+-- use(s({ trig = 'example', snippetType = 'autosnippet', wordTrig = false },
+--     c(1, { t "this will auto complete", t 'example' })))
+
+vim.cmd [[set makeprg=just]]
 
 ls.add_snippets("all", S, { key = "session" })
