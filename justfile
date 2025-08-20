@@ -1,13 +1,12 @@
-alias r := run
 alias a := session
 session_name := 'fbf'
 jd := justfile_directory()
 hd := env_var('HOME')
 startup_cmd := 'nix develop'
-bldr_name := 'build'
+bldr_name := 'fbf'
 
 # build and run
-default: _dev-build run tags
+default: _bootstrap build tags clean
 
 # start tmux session
 session:
@@ -27,9 +26,14 @@ session:
 @tags:
     ctags -R
 
-@run:
-    ./bin/{{bldr_name}}
+build: format
+    ./{{bldr_name}}
 
-_dev-build:
+clean:
+    rm *.o *.mod
+
+format:
     @alejandra . > /dev/null 2>&1
-    gfortran -std=f2018 fbf.f90 build.f90 -o bin/{{bldr_name}}
+
+_bootstrap:
+    gfortran -std=f2018 fbf.f90 build.f90 -o {{bldr_name}}
