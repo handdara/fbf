@@ -68,6 +68,13 @@ contains
         res = log_level
     end
 
+    subroutine set_log_level (lvl)
+        !!likely one of the `LL_...` constants
+        integer, intent(in) :: lvl 
+        log_level = lvl
+
+    end
+
 end module fbf_log
 
 module fbf
@@ -80,7 +87,7 @@ module fbf
 
     public :: logError, logWarn, logInfo, logDebug, logTrace
     public :: LL_ERROR, LL_WARN, LL_INFO, LL_DEBUG, LL_TRACE
-    public :: get_log_level
+    public :: get_log_level, set_log_level
     public :: compile_src
 contains
 
